@@ -6,24 +6,31 @@
             <th>
                 Wind km/h
                 <!--<img src="../../../../wwwroot/dist/img/wind.png"/>-->
+                <i class="glyphicon glyphicon-leaf"></i>
             </th>
             <th>
                 Gust km/h
+                <i class="glyphicon glyphicon-cloud"></i>
             </th>
             <th>
                 Humidity %
+                <i class="glyphicon glyphicon-fire"></i>
             </th>
             <th>
                 Sun Rising AM
+                <i class="glyphicon glyphicon-star-empty"></i>
             </th>
             <th>
                 Sun Set PM
+                <i class="glyphicon glyphicon-star"></i>
             </th>
             <th>
                 Clear
+                <i class="glyphicon glyphicon-search"></i>
             </th>
             <th>
                 Feels Like °C
+                <i class="glyphicon glyphicon-sunglasses"></i>
             </th>
         </tr>
     </thead>
@@ -39,10 +46,10 @@
                 {{constraint?.humidity}}
             </td>
             <td>
-                {{constraint?.sunRising}}
+                {{constraint?.sunRising | fmDateLocal}}
             </td>
             <td>
-                {{constraint?.sunSet}}
+                {{constraint?.sunSet | fmDateLocal}}
             </td>
             <td>
                 {{constraint?.clear}}

@@ -14,6 +14,7 @@ import { WeatherConstraintsComponent } from './components/weatherconstraints/wea
 import { WeatherConstraintsService } from './components/weatherconstraints/weatherconstraint.service';
 import { WeatherConstraintComponent } from './components/weatherconstraints/weatherconstraint.component';
 import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
+import { DatePipeLocal } from './components/weatherform/weatherform.pipe';
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -26,7 +27,8 @@ import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
         WeatherDetailComponent,
         WeatherFormComponent,
         WeatherConstraintsComponent,
-        WeatherConstraintComponent
+        WeatherConstraintComponent,
+        DatePipeLocal
     ],
     providers: [
         WeatherService,

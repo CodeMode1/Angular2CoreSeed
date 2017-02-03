@@ -31,7 +31,7 @@
             <tr *ngFor="let weather of weathers">
                 <td>{{weather?.id}}</td>
                 <td><a [routerLink]="['detail', weather.name]">{{weather?.name}}</a></td>
-                <td>{{weather?.date | date}}</td>
+                <td>{{weather?.date | fmDateLocal}}</td>
                 <td>{{weather?.tempC}}</td>
                 <td>{{weather?.summary}}</td>
                 <td>{{weather?.city}}</td>
