@@ -1,11 +1,24 @@
-﻿<div *ngIf="onDelete" class="panel panel-success">
+﻿<div *ngIf="isShowDelete" class="panel panel-success">
     <div class="panel-heading">
         <p>You deleted the wheather successfully.</p>        
     </div>
-    <div class="panel-body">
-        <h2>Success deleting the weather #  : </h2>
-        <h3>{{idToDelete}}</h3>
+    <div class="panel-body" *ngIf="isShowDelete">
+        <h2>Success deleting</h2>
+        <button class="btn btn-sm btn-success" (click)="hideNotif()">Hide</button>
     </div>
-    <button class="btn btn-sm btn-success" (click)="hideDeleteNotif()">Hide</button>
 </div>
+
+<kendo-dialog *ngIf="isDelete" (close)="cancelDelete()">
+    <kendo-dialog-titlebar>
+        <div style="font-size: 18px; line-height: 1.3em;">
+            <span class="k-icon k-i-warning"></span> Delete Data
+        </div>
+    </kendo-dialog-titlebar>
+    <p style="margin: 30px; text-align: center;">This action cannot be undone.</p>
+
+    <kendo-dialog-actions>
+        <button kendoButton (click)="cancelDelete()">Cancel</button>
+        <button kendoButton (click)="onDeleteData()" primary="ture">Delete</button>
+    </kendo-dialog-actions>
+</kendo-dialog>
 

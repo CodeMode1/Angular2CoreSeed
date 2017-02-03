@@ -10,27 +10,38 @@ import 'rxjs/add/observable/throw';
     template: require('./delete.component.html')
 })
 export class DeleteComponent {
-    @Input() onDelete: boolean;
+    @Input() isDelete: boolean;
     @Input() weatherToDeleteId: number;
     @Output() deleteSuccess: EventEmitter<boolean>;
-    idToDelete: number;
+    public idToDelete: number;
+    public isShowDelete: boolean;
     constructor(private _weatherService: WeatherService, private _route: ActivatedRoute) {
         this.idToDelete = null;
+        this.isShowDelete = false;
         this.deleteSuccess = new EventEmitter<boolean>();
     }
 
     ngOnInit() {
     }
 
-    hideDeleteNotif() {
-        this.onDelete = false;
+    ngOnChanges() {
+        if (this.isDelete) {
+            // pop up open
+            console.log("in delete : " + this.isDelete);
+        }
     }
 
-    ngOnChanges() {
-        if (this.onDelete) {
-            this.idToDelete = this.weatherToDeleteId;
-            this.deleterWeatherById(this.idToDelete);
-        }
+    hideNotif() {
+        this.isShowDelete = false;
+    }
+
+    onDeleteData() {
+        this.idToDelete = this.weatherToDeleteId;
+        this.deleterWeatherById(this.idToDelete);
+    }
+
+    cancelDelete() {
+        this.deleteSuccess.emit(false);
     }
 
     deleterWeatherById(id: number) {
@@ -38,6 +49,7 @@ export class DeleteComponent {
             .subscribe(
                 result => {
                     this.deleteSuccess.emit(true);
+                    this.isShowDelete = true;
                     console.log("SUCCESS DELETE in component");
                 },
                 error => {

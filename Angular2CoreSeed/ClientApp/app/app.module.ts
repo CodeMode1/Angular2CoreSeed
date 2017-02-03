@@ -15,6 +15,7 @@ import { WeatherConstraintsService } from './components/weatherconstraints/weath
 import { WeatherConstraintComponent } from './components/weatherconstraints/weatherconstraint.component';
 import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
 import { DatePipeLocal } from './components/weatherform/weatherform.pipe';
+import { DialogModule } from '@progress/kendo-angular-dialog';
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -38,6 +39,7 @@ import { DatePipeLocal } from './components/weatherform/weatherform.pipe';
         UniversalModule, // Must be first import. This automatically imports BrowserModule, HttpModule, and JsonpModule too.
         FormsModule,
         DateInputsModule,
+        DialogModule,
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },

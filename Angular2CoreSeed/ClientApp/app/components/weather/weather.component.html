@@ -4,7 +4,7 @@
     <button class="btn btn-primary" (click)="showWeatherForm()">Create new Weather</button>
 </div>
 
-<delete [onDelete]="inputDelete" [weatherToDeleteId]="inputIdDelete" (deleteSuccess)="refreshResults($event)"></delete>
+<delete [isDelete]="inputDelete" [weatherToDeleteId]="inputIdDelete" (deleteSuccess)="refreshResults($event)"></delete>
 
 <div *ngIf="showForm" class="col-md-12">
     <weather-form [weatherToSave]="weather1" (newWeather)="postWeather($event)" (edWeather)="editWeather($event)" [modeEdit]="editForm"></weather-form>
@@ -19,10 +19,10 @@
                 <th>Id</th>
                 <th>Name</th>
                 <th>Date</th>
-                <th>TempC</th>
+                <th>Temp °C</th>
                 <th>Summary</th>
                 <th>City</th>
-                <th>Temp F</th>
+                <th>Temp °F</th>
                 <th>Delete</th>
                 <th>Edit</th>
             </tr>

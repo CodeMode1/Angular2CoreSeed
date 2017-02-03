@@ -12,6 +12,7 @@
     "@angular/platform-server": "2.0.0",
     "@angular/router": "3.0.0",
     "@progress/kendo-angular-dateinputs": "^0.3.1",
+    "@progress/kendo-angular-dialog": "^0.14.1",
     "@progress/kendo-angular-intl": "^0.9.1",
     "@progress/kendo-theme-default": "^2.11.17",
     "@types/node": "^6.0.38",
