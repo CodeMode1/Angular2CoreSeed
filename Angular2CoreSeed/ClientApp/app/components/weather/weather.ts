@@ -8,7 +8,6 @@
     temperatureF?: number;
 }
 
-
 export class Weather implements IWeather {
     constructor(
         public id: number,

@@ -34,6 +34,9 @@ module.exports = {
             'jquery',
             'rxjs',
             'zone.js',
+            '@progress/kendo-angular-intl',
+            '@progress/kendo-angular-dateinputs',
+            '@progress/kendo-theme-default/dist/all.css'
         ]
     },
     output: {

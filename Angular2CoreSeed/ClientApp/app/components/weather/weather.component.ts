@@ -32,7 +32,7 @@ export class WeatherComponent implements OnInit {
         this.titreWeather = "Weather Check";
         this.showForm = false;
         // class weather object to bind to.
-        this.weather1 = new Weather(1, "HotWeather", new Date(2017, 0, 27));
+        this.weather1 = new Weather(1, "HotWeather", new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()));
         console.log(this.weather1.date);
     }
 

@@ -6,9 +6,11 @@
                 <label for="name">Name</label>
                 <input type="text" class="form-control" id="name" name="name" required [(ngModel)]="weatherToSave.name">
             </div>
+            
             <div class="form-group">
                 <label for="date">Date</label>
-                <input type="date" class="form-control" id="date" name="date" required [(ngModel)]="weatherToSave.date">
+                <kendo-calendar name="date" id="date" [(ngModel)]="weatherToSave.date" [focusedDate]="weatherToSave.date" #date="ngModel" required></kendo-calendar>
+                <div [hidden]="date.valid" class="k-invalid">Date required. Please select one.</div>
             </div>
 
             <div class="form-group">
